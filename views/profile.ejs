@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <% include ./partials/head %>
+  </head>
+  <body>
+    <% include ./partials/header %>
+    <div style="display: flex; align-self: flex-end; justify-content: flex-end; height: 40px; align-items: center;">
+      <a href="/calculator" title="Calculator" class="nav-link">Calculator</a>
+      <a style="" class="nav-link" href="/logout" title="Logout"><i class="fa fa-sign-out" style="align-self: center;"></i></a>
+    </div>
+    </nav> <!-- end of nav -->
+    <div class="container">
+      <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+      </div>
+      <div class="row">
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+          <div class="well">
+            <h3><span class="fa fa-user"></span> Local</h3>
+            <% if (user.local.email) { %>
+            <p>
+            <strong>id</strong>: <%= user._id %><br>
+            <strong>email</strong>: <%= user.local.email %><br>
+            <strong>password</strong>: <%= user.local.password %>
+            </p>
+
+            <a href="/unlink/local" class="btn btn-default">Unlink</a>
+            <% } else { %>
+            <a href="/connect/local" class="btn btn-default">Connect Local</a>
+            <% } %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="well">
+            <h3 class="text-danger"><span class="fa fa-google-plus"></span> Google+</h3>
+            <% if (user.google.token) { %>
+            <p>
+            <strong>id</strong>: <%= user.google.id %><br>
+            <strong>token</strong>: <%= user.google.token %><br>
+            <strong>email</strong>: <%= user.google.email %><br>
+            <strong>name</strong>: <%= user.google.name %>
+            </p>
+            <a href="/unlink/google" class="btn btn-danger">Unlink</a>
+            <% } else { %>
+            <a href="/connect/google" class="btn btn-danger">Connect Google</a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="justify-content: center; padding-top: 70px;">
+        <a href="/calculator" class="btn btn-warning"><span class="fa fa-calculator"</span> Ejuice Calculator </a>
+      </div>
+    </div>
+  </body>
+</html>

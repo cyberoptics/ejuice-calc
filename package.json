@@ -1,0 +1,42 @@
+{
+  "name": "ejuice-calc",
+  "version": "1.0.0",
+  "description": "A calculator webapp, written in Node.js, for mixing DIY ejuice.",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.0",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.3.1",
+    "morgan": "^1.6.1",
+    "passport": "^0.3.2",
+    "passport-google-oauth": "^0.2.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgrowden/ejuice-calc.git"
+  },
+  "keywords": [
+    "ejuice",
+    "calculator",
+    "vaping",
+    "node"
+  ],
+  "author": "Taylor Growden",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tgrowden/ejuice-calc/issues"
+  },
+  "homepage": "https://github.com/tgrowden/ejuice-calc#readme"
+}

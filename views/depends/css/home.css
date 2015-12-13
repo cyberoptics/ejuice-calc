@@ -1,0 +1,97 @@
+body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+
+.fullWidth {
+  width: 100%;
+}
+
+.contentCont {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/*tr:nth-child(odd) {
+  background: #CCC
+}
+
+tr:nth-child(even) {
+  background: #FFF
+}*/
+
+.mainContent {
+  margin-left: 10%;
+  margin-right: 10%;
+  max-width: 100%;
+}
+
+
+
+.mainContent {
+  padding-top: 20px;
+}
+
+.warning {
+  background-color: #F66;
+}
+
+.input-group-addon {
+  padding: 0px 12px;
+}
+
+label {
+	font-weight: inherit;
+}
+
+.input-group {
+  max-width: 200px;
+}
+
+.navbar-inverse {
+  background-color: black;
+}
+
+span.input-group-addon {
+    width: 20%;
+}
+
+#output thead > tr > th {padding: 0px 15px;}
+
+span.input-group-addon {
+    padding-top: 7px;
+}
+
+#precedenceDiv, .hideTarget{
+  display: none;
+}
+td, th {
+    padding: 0px 10px;
+}
+
+.fa {
+  font-size: 22px;
+}
+.flex-center{
+  align-items: center;
+}
+.fa-sign-out {
+  padding-left: 40px;
+}
+div.well {
+  padding-top: 50px;
+}
+/*
+#targetsCont {
+  align-self: flex-start;
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+}
+*/

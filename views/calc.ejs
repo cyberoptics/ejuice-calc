@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ./partials/head %>
+  </head>
+  <body>
+    <% include ./partials/header %>
+
+  <div style="display: flex; align-self: flex-end; justify-content: flex-end; height: 40px; align-items: center;">
+
+    <% if (user.local.email) { %>
+      <a href="/profile" title="Profile" class="nav-link"><%= user.local.email %></a>
+    <% } else if (user.google.token) { %>
+      <a href="/profile" title="Profile" class="nav-link"><%= user.google.name %></a>
+    <% } else { %>
+      <a href="/login" id="Login" title="Profile" class="nav-link">
+        Login
+      </a>
+    <% } %>
+ <a style="" class="nav-link" href="/logout" title="Logout"><i class="fa fa-sign-out" style="align-self: center;"></i></a>
+  </div>
+</nav>
+<%// include ./partials/recipes %>
+    <div class="container">
+      <div class="row">
+        <div id="targetsCont">
+          <table class="table-bordered table-hover table-striped table-condensed">
+            <tr>
+              <td>Total Amount: </td>
+              <td>
+                <div class="input-group">
+                  <input id="total" class="targets col-xs-8" type="number" value="0" />
+                  <span class="input-group-addon col-xs-4">mL</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Target Nicotine: </td>
+              <td>
+                <div class="input-group">
+                  <input id="targetNic" class="targets col-xs-8" type="number" value="0" />
+                  <span class="input-group-addon col-xs-4">mg/mL</span>
+                </div>
+              </td>
+              <th class="weight">Weight</th>
+            </tr>
+            <tr class="hideTarget">
+              <td>Target VG: </td>
+              <td>
+                <div class="input-group">
+                  <input id="targetVg" class="targets col-xs-8" type="number" value="0" />
+                  <span class="input-group-addon col-xs-4">%</span>
+                </div>
+              </td>
+              <td class="weight">
+                <div class="input-group">
+                  <input id="targetVgWeight" class="targets col-xs-8" type="number" value="1.26" />
+                  <span class="input-group-addon col-xs-4">g/mL</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Base Nic Concentration: </td>
+              <td>
+                <div class="input-group">
+                  <input id="baseNic" class="targets col-xs-8" type="number" value="0" />
+                  <span class="input-group-addon col-xs-4">mg/mL</span>
+                </div>
+              </td>
+              <td class="weight">
+                <div class="input-group">
+                  <input id="baseNicWeight" class="targets col-xs-8" type="number" value="0" />
+                  <span class="input-group-addon col-xs-4">g/mL</span>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <br style="clear: both" />
+          <label style="display: inline-block;">
+            <input type="checkbox" id="maxVg" value="" checked="checked"><strong>Max VG</strong></label>
+          </div>
+        </div>
+        <div class="row">
+          <div id="ingredientsContainer" class="contentCont tableContainer">
+            <div class="table-responsive">
+              <table class="table-bordered table-hover table-striped table-condensed" id="ingredients">
+                <thead>
+                  <tr>
+                    <th class="number"></th>
+                    <th class="tableLabel">Flavor</th>
+                    <th class="tableLabel">Percent</th>
+                    <th class="tableLable weight">Weight</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="numIngredient">1.</span></td>
+                    <td>
+                      <input type='text' />
+                    </td>
+                    <td>
+                      <div class="input-group">
+                        <input type='number' value="0" class="col-xs-8" />
+                        <span class="input-group-addon col-xs-4">%</span>
+                      </div>
+                    </td>
+                    <td class="weight">
+                      <div class="input-group">
+                        <input id="total" class="targets col-xs-8" type="number" value="0" />
+                        <span class="input-group-addon col-xs-4">g/mL</span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <br />
+            <input id="addRow" class="btn btn-default" type="button" value="Add New Row" />
+            <input id="deleteRow" class="btn btn-default" type="button" value="Delete Last Row" />
+            <!--<label><input type="checkbox" id="massCheck" value="">Measure by Mass</label> -->
+          </div>
+        </div>
+        <div class="row">
+          <table id="output" class="output hide table-bordered table-hover table-striped table-condensed">
+            <thead>
+              <tr>
+                <th>Ingredient</th>
+                <th>mL</th>
+                <th>Total %</th>
+                <th>Weight</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ingredient">Nicotine</td>
+                <td class="mL"></td>
+                <td class="total"></td>
+                <td class="weight"></td>
+              </tr>
+              <tr>
+                <td class="ingredient">VG</td>
+                <td class="mL"></td>
+                <td class="total"></td>
+                <td class="weight"></td>
+              </tr>
+              <tr>
+                <td class="ingredient">PG</td>
+                <td class="mL"></td>
+                <td class="total"></td>
+                <td class="weight"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br style="clear: both;" />
+        <div class="row">
+          <input id="calculate" class="btn btn-default" type="button" value="Calculate" onclick="storeValues()" />
+        </div>
+      </div>
+      <!-- /.container -->
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script>
+      window.jQuery || document.write('<script src="js/bootstrap/jquery.min.js"><\/script>')
+      </script>
+      <!-- custom scripts -->
+      <script src="js/scripts.js"></script>
+      <script src="js/cookies.js"></script>
+      <script src="js/bootstrap/bootstrap.min.js"></script>
+    </body>
+  </html>
