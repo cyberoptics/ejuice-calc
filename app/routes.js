@@ -1,11 +1,13 @@
 var mongoose = require('mongoose');
 require('./models/user');
+require('./models/recipe');
 module.exports = function(app, passport) {
   // normal routes ===============================================================
   // show the home page (will also have our login links)
   app.get('/', function(req, res) {
     res.render('index.ejs');
   });
+
 // PROFILE SECTION =========================
   app.get('/profile', isLoggedIn, function(req, res) {
     res.render('profile.ejs', {
@@ -98,7 +100,7 @@ module.exports = function(app, passport) {
       res.redirect('/profile');
     });
   });
-  /*
+
   //
   // test to serve page from mongodb
   //
@@ -118,7 +120,7 @@ module.exports = function(app, passport) {
   //    
   // end test
   //
-  */
+
 };
 // route middleware to ensure user is logged in
 function isLoggedIn(req, res, next) {

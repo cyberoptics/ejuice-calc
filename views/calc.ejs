@@ -5,7 +5,7 @@
   </head>
   <body>
     <% include ./partials/header %>
-
+<div class="col-sm-6 pull-sm-right">
   <div style="display: flex; align-self: flex-end; justify-content: flex-end; height: 40px; align-items: center;">
 
     <% if (user.local.email) { %>
@@ -19,9 +19,12 @@
     <% } %>
  <a style="" class="nav-link" href="/logout" title="Logout"><i class="fa fa-sign-out" style="align-self: center;"></i></a>
   </div>
+  </div>
 </nav>
+
 <%// include ./partials/recipes %>
     <div class="container">
+    <form action="/ " method="post">
       <div class="row">
         <div id="targetsCont">
           <table class="table-bordered table-hover table-striped table-condensed">
