@@ -24,7 +24,6 @@
             <p>
             <strong>id</strong>: <%= user._id %><br>
             <strong>email</strong>: <%= user.local.email %><br>
-            <strong>password</strong>: <%= user.local.password %>
             </p>
 
             <a href="/unlink/local" class="btn btn-default">Unlink</a>
@@ -39,7 +38,6 @@
             <% if (user.google.token) { %>
             <p>
             <strong>id</strong>: <%= user.google.id %><br>
-            <strong>token</strong>: <%= user.google.token %><br>
             <strong>email</strong>: <%= user.google.email %><br>
             <strong>name</strong>: <%= user.google.name %>
             </p>
@@ -51,7 +49,7 @@
         </div>
       </div>
       <div class="row" style="justify-content: center; padding-top: 70px;">
-        <a href="/calculator" class="btn btn-warning"><span class="fa fa-calculator"</span> Ejuice Calculator </a>
+        <a href="/calculator" class="btn btn-primary btn-lg"><span class="fa fa-calculator"</span> Ejuice Calculator </a>
       </div>
     </div>
   </body>
