@@ -3,9 +3,10 @@
 	<select>
 		<option value="selectOne">--Select a Recipe--</option>
 		<option> <%= user._id %> </option>
+		<option> <%//= recipes.name %> </option>
 	</select>
-	<select>
-		<option value="selectOne">--Select a Recipe--</option>
-	</select>
+	<button type="button" id="saveRecipe">Save Recipe</button>
+<!--	<button type="button" id="updateRecipe">Update Recipe</button> -->
+	<span>Recipe Name: </span><input type="text" id="recipeName" name="name" />
 </div>
 </div>

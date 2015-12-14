@@ -1,13 +1,13 @@
 
 var mongoose = require('mongoose');
-var bcrypt   = require('bcrypt-nodejs');
+var Schema = mongoose.Schema;
 
-var recipeSchema = mongoose.Schema({
+var recipeSchema = new Schema({
 
-    user_id             : String,
+    user_id             : Schema.Types.ObjectId,
+    name 				: String,
     values              : Array,
     flavors             : Array
-
 
 });
 

@@ -35,7 +35,6 @@
         baseNicWeight = $('#baseNicWeight').val(),
         targetVgWeight = $('#targetVgWeight').val(),
         targetPgWeight = 1.038;
-
       //remove flavors so no repetitions when calculating 2+ times 
       $("#output tbody").find("tr:gt(2)").remove();
       // set Nic values in output table

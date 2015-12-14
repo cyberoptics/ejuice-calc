@@ -22,9 +22,8 @@
   </div>
 </nav>
 
-<%// include ./partials/recipes %>
+<% include ./partials/recipes %>
     <div class="container">
-    <form action="/ " method="post">
       <div class="row">
         <div id="targetsCont">
           <table class="table-bordered table-hover table-striped table-condensed">
@@ -32,7 +31,7 @@
               <td>Total Amount: </td>
               <td>
                 <div class="input-group">
-                  <input id="total" class="targets col-xs-8" type="number" value="0" />
+                  <input id="total" class="targets col-xs-8 values" type="number" name="values" value="0" />
                   <span class="input-group-addon col-xs-4">mL</span>
                 </div>
               </td>
@@ -41,7 +40,7 @@
               <td>Target Nicotine: </td>
               <td>
                 <div class="input-group">
-                  <input id="targetNic" class="targets col-xs-8" type="number" value="0" />
+                  <input id="targetNic" class="targets col-xs-8 values" type="number" name="values" value="0" />
                   <span class="input-group-addon col-xs-4">mg/mL</span>
                 </div>
               </td>
@@ -51,13 +50,13 @@
               <td>Target VG: </td>
               <td>
                 <div class="input-group">
-                  <input id="targetVg" class="targets col-xs-8" type="number" value="0" />
+                  <input id="targetVg" class="targets col-xs-8 values" type="number" name="values" value="0" />
                   <span class="input-group-addon col-xs-4">%</span>
                 </div>
               </td>
               <td class="weight">
                 <div class="input-group">
-                  <input id="targetVgWeight" class="targets col-xs-8" type="number" value="1.26" />
+                  <input id="targetVgWeight" class="targets col-xs-8 values" type="number" name="values" value="1.26" />
                   <span class="input-group-addon col-xs-4">g/mL</span>
                 </div>
               </td>
@@ -66,13 +65,13 @@
               <td>Base Nic Concentration: </td>
               <td>
                 <div class="input-group">
-                  <input id="baseNic" class="targets col-xs-8" type="number" value="0" />
+                  <input id="baseNic" class="targets col-xs-8 values" type="number" name="values" value="0" />
                   <span class="input-group-addon col-xs-4">mg/mL</span>
                 </div>
               </td>
               <td class="weight">
                 <div class="input-group">
-                  <input id="baseNicWeight" class="targets col-xs-8" type="number" value="0" />
+                  <input id="baseNicWeight" class="targets col-xs-8 values" type="number" name="values" value="0" />
                   <span class="input-group-addon col-xs-4">g/mL</span>
                 </div>
               </td>
@@ -99,17 +98,17 @@
                   <tr>
                     <td><span class="numIngredient">1.</span></td>
                     <td>
-                      <input type='text' />
+                      <input type='text' class="flavors" name="flavors" />
                     </td>
                     <td>
                       <div class="input-group">
-                        <input type='number' value="0" class="col-xs-8" />
+                        <input type='number' value="0" class="col-xs-8 flavors" name="flavors" />
                         <span class="input-group-addon col-xs-4">%</span>
                       </div>
                     </td>
                     <td class="weight">
                       <div class="input-group">
-                        <input id="total" class="targets col-xs-8" type="number" value="0" />
+                        <input id="total" class="targets col-xs-8 flavors" type="number" name="flavors" value="0" />
                         <span class="input-group-addon col-xs-4">g/mL</span>
                       </div>
                     </td>
@@ -122,6 +121,7 @@
             <input id="deleteRow" class="btn btn-default" type="button" value="Delete Last Row" />
             <!--<label><input type="checkbox" id="massCheck" value="">Measure by Mass</label> -->
           </div>
+          
         </div>
         <div class="row">
           <table id="output" class="output hide table-bordered table-hover table-striped table-condensed">
@@ -171,6 +171,7 @@
       <!-- custom scripts -->
       <script src="js/scripts.js"></script>
       <script src="js/cookies.js"></script>
+      <script src="js/api.js"></script>
       <script src="js/bootstrap/bootstrap.min.js"></script>
     </body>
   </html>
