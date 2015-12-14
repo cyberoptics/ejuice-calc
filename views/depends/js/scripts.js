@@ -7,19 +7,20 @@
     $('input').parent("td").css("padding", "0px 0px");
     $('div.input-group').parent("td").css("padding", "0px 0px");
     // End TODO
-    var numIngredient = 2;
+    var numIngredient;
     $("#addRow").click(function() {
+      numIngredient = $('#ingredients tbody tr').length;
+      numIngredient++;
       $("#ingredients tr:last").clone().find('input').val('').end().insertAfter("#ingredients tr:last");
       $("#ingredients tr:last").find('.numIngredient').html(numIngredient + ".");
       $("#ingredients tr:last").find('input[type="number"]').val('0');
-      numIngredient++;
     });
     var deleteIngredient = function deleteIngredient() {
       var table = document.getElementById("ingredients");
       var count = $('#ingredients tbody > tr').length;
       if (count > 1) {
-        var row = table.deleteRow(-1);
         numIngredient--;
+        var row = table.deleteRow(-1);
       }
     };
     $("#deleteRow").click(deleteIngredient);

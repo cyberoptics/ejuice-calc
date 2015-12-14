@@ -1,12 +1,18 @@
-<div class="row">
-<div class="col-sm-12 flex-center" id="recipesDiv">
-	<select>
-		<option value="selectOne">--Select a Recipe--</option>
-		<option> <%= user._id %> </option>
-		<option> <%//= recipes.name %> </option>
-	</select>
-	<button type="button" id="saveRecipe">Save Recipe</button>
-<!--	<button type="button" id="updateRecipe">Update Recipe</button> -->
-	<span>Recipe Name: </span><input type="text" id="recipeName" name="name" />
-</div>
+<div class="container">
+  <div class="row" id="recipesDiv">
+    <div class="col-sm-12 col-lg-6 flex">
+      <input type="text" id="recipeName" class="form-control" placeholder="Recipe Name" name="name" />
+      <button type="button" class="btn btn-default" id="saveRecipe">Save Recipe</button>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+      <select id="recipeSelect" class="form-control">
+        <option value="default">--Select a Recipe--</option>
+      </select>
+      <div class="flex">
+        <button type="button" class="btn btn-default" id="deleteRecipe">Delete Recipe</button>
+        <button type="button" class="btn btn-default" id="updateRecipe">Update Recipe</button>
+      </div>
+    </div>
+    <div id="userId" style="display: none;"><%= user._id %></div>
+  </div>
 </div>

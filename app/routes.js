@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 require('./models/user');
+require('./models/recipe');
 var Recipe = require('./models/recipe');
 var express = require('express');
 module.exports = function(app, passport, user, recipe) {
@@ -16,9 +17,9 @@ module.exports = function(app, passport, user, recipe) {
   });
   app.get('/calculator', isLoggedIn, function(req, res) {
     res.render('calc.ejs', {
-      user: req.user,
-      recipe: req.Recipe
+      user: req.user
     });
+    console.log("recipe = " + recipe);
   });
   // LOGOUT ==============================
   app.get('/logout', function(req, res) {
@@ -155,8 +156,7 @@ module.exports = function(app, passport, user, recipe) {
       if (err) res.send(err);
       res.json(recipe);
     });
-  })
-  .put(function(req, res) {
+  }).put(function(req, res) {
     Recipe.findById(req.params.recipe_id, function(err, recipe) {
       if (err) res.send(err);
       recipe.name = req.body.name;
@@ -167,8 +167,16 @@ module.exports = function(app, passport, user, recipe) {
         });
       });
     });
+  }).delete(function(req, res) {
+    Recipe.remove({
+      _id: req.params.recipe_id
+    }, function(err, recipe) {
+      if (err) res.send(err);
+      res.json({
+        message: 'Successfully deleted'
+      });
+    });
   });
-
   //app.use('/api', isLoggedIn, router);
   app.use('/api', router);
 };

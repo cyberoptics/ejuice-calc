@@ -16,14 +16,6 @@ body {
   padding-bottom: 15px;
 }
 
-/*tr:nth-child(odd) {
-  background: #CCC
-}
-
-tr:nth-child(even) {
-  background: #FFF
-}*/
-
 .mainContent {
   margin-left: 10%;
   margin-right: 10%;
@@ -85,13 +77,23 @@ td, th {
 div.well {
   padding-top: 50px;
 }
-/*
-#targetsCont {
-  align-self: flex-start;
+
+#recipesDiv {
+  justify-content: space-around;
+  padding-bottom: 10px;
+  align-items: flex-start;
+  background-color: #eceeef;
+  padding-top: 20px;
+  border-radius: .25rem;
 }
 
-.row{
-  display: flex;
-  justify-content: center;
+#recipesDiv .form-control {
+  margin-bottom: 10px;
 }
-*/
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
+  align-items: flex-start;
+}
