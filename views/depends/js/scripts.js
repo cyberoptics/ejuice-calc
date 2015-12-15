@@ -77,7 +77,7 @@
             totalPercent = totalPercent + $percent;
           }
           window.totalPercent = totalPercent;
-          console.log("Ingredients + Nic = " + totalPercent + "%");
+          //console.log("Ingredients + Nic = " + totalPercent + "%");
         });
       }
       //set VG values in output
