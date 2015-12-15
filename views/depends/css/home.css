@@ -103,7 +103,11 @@ div.well {
 body {
   padding-bottom: 5rem;
 }
-
+@media (max-width: 543px) {
+  #profileContainer {
+    padding-top: 2rem;
+  }
+}
 @media (max-width: 420px) {
   .input-group-addon {
     display: none;
