@@ -7,7 +7,6 @@
       $('#recipeSelect').find('option').remove().end().append('<option value="default">--Select a Recipe--</option>').val();
       $.getJSON("/api/recipes", function(json, user) {
         window.recipes = json;
-        var userId = $('#userId').text();
         var list = document.getElementById("recipeSelect");
         for (var i = 0; i < recipes.length; i++) {
           if (recipes[i].user_id == userId) {

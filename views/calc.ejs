@@ -239,5 +239,10 @@
       <script src="js/scripts.js"></script>
       <script src="js/api.js"></script>
       <script src="js/bootstrap/bootstrap.min.js"></script>
+      <% if (user._id){ %>
+        <script>
+          window.userId = "<%= user._id %>";
+        </script>
+      <% } %>
     </body>
   </html>
