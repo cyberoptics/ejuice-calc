@@ -161,7 +161,7 @@
         </div>
         <br style="clear: both;" />
         <div class="row">
-          <input id="calculate" class="btn btn-default" type="button" value="Calculate" <% if (user) { %>onclick="storeValues()" <% } %> />
+          <input id="calculate" class="btn btn-default" type="button" value="Calculate" <% if (!user) { %>onclick="storeValues()" <% } %> />
         </div>
       </div>
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
