@@ -25,14 +25,14 @@
 <% include ./partials/recipes %>
     <div class="container">
       <div class="row">
-        <div id="targetsCont">
-          <table class="table-bordered table-hover table-striped table-condensed">
+        <div id="targetsCont" class="table-responsive">
+          <table class="table table-bordered table-hover table-striped table-condensed">
             <tr>
               <td>Total Amount: </td>
               <td>
                 <div class="input-group">
-                  <input id="total" class="targets col-xs-8 values form-control" type="number" name="values" value="0" />
-                  <span class="input-group-addon col-xs-4">mL</span>
+                  <input id="total" class="targets col-xs-6 col-sm-8 values form-control" type="number" name="values" value="0" />
+                  <span class="input-group-addon col-xs-6 col-sm-4">mL</span>
                 </div>
               </td>
             </tr>
@@ -40,8 +40,8 @@
               <td>Target Nicotine: </td>
               <td>
                 <div class="input-group">
-                  <input id="targetNic" class="targets col-xs-8 values form-control" type="number" name="values" value="0" />
-                  <span class="input-group-addon col-xs-4">mg/mL</span>
+                  <input id="targetNic" class="targets col-xs-6 col-sm-8 values form-control" type="number" name="values" value="0" />
+                  <span class="input-group-addon col-xs-6 col-sm-4">mg/mL</span>
                 </div>
               </td>
               <th class="weight">Weight</th>
@@ -50,14 +50,14 @@
               <td>Target VG: </td>
               <td>
                 <div class="input-group">
-                  <input id="targetVg" class="targets col-xs-8 values form-control" type="number" name="values" value="0" />
-                  <span class="input-group-addon col-xs-4">%</span>
+                  <input id="targetVg" class="targets col-xs-6 col-sm-8 values form-control" type="number" name="values" value="0" />
+                  <span class="input-group-addon col-xs-6 col-sm-4">%</span>
                 </div>
               </td>
               <td class="weight">
                 <div class="input-group">
-                  <input id="targetVgWeight" class="targets col-xs-8 values form-control" type="number" name="values" value="1.26" />
-                  <span class="input-group-addon col-xs-4">g/mL</span>
+                  <input id="targetVgWeight" class="targets col-xs-6 col-sm-8 values form-control" type="number" name="values" value="1.26" />
+                  <span class="input-group-addon col-xs-6 col-sm-4">g/mL</span>
                 </div>
               </td>
             </tr>
@@ -65,14 +65,14 @@
               <td>Base Nic Concentration: </td>
               <td>
                 <div class="input-group">
-                  <input id="baseNic" class="targets col-xs-8 values form-control" type="number" name="values" value="0" />
-                  <span class="input-group-addon col-xs-4">mg/mL</span>
+                  <input id="baseNic" class="targets col-xs-6 col-sm-8 values form-control" type="number" name="values" value="0" />
+                  <span class="input-group-addon col-xs-6 col-sm-4">mg/mL</span>
                 </div>
               </td>
               <td class="weight">
                 <div class="input-group">
-                  <input id="baseNicWeight" class="targets col-xs-8 values form-control" type="number" name="values" value="0" />
-                  <span class="input-group-addon col-xs-4">g/mL</span>
+                  <input id="baseNicWeight" class="targets col-xs-6 col-sm-8 values form-control" type="number" name="values" value="0" />
+                  <span class="input-group-addon col-xs-6 col-sm-4">g/mL</span>
                 </div>
               </td>
             </tr>
@@ -85,7 +85,7 @@
         <div class="row">
           <div id="ingredientsContainer" class="contentCont tableContainer">
             <div class="table-responsive">
-              <table class="table-bordered table-hover table-striped table-condensed" id="ingredients">
+              <table class="table table-bordered table-hover table-striped table-condensed" id="ingredients">
                 <thead>
                   <tr>
                     <th class="number"></th>
@@ -102,14 +102,14 @@
                     </td>
                     <td>
                       <div class="input-group">
-                        <input type='number' value="0" class="col-xs-8 flavors form-control" name="flavors" />
-                        <span class="input-group-addon col-xs-4">%</span>
+                        <input type='number' value="0" class="col-xs-6 col-sm-8 flavors form-control" name="flavors" />
+                        <span class="input-group-addon col-xs-6 col-sm-4">%</span>
                       </div>
                     </td>
                     <td class="weight">
                       <div class="input-group">
-                        <input id="total" class="targets col-xs-8 flavors form-control" type="number" name="flavors" value="0" />
-                        <span class="input-group-addon col-xs-4">g/mL</span>
+                        <input id="total" class="targets col-xs-6 col-sm-8 flavors form-control" type="number" name="flavors" value="0" />
+                        <span class="input-group-addon col-xs-6 col-sm-4">g/mL</span>
                       </div>
                     </td>
                   </tr>
@@ -124,7 +124,7 @@
           
         </div>
         <div class="row">
-          <table id="output" class="output hide table-bordered table-hover table-striped table-condensed">
+          <table id="output" class="table output hide table-bordered table-hover table-striped table-condensed">
             <thead>
               <tr>
                 <th>Ingredient</th>
