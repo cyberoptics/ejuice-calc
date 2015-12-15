@@ -160,7 +160,7 @@
           <input id="calculate" class="btn btn-default" type="button" value="Calculate" onclick="storeValues()" />
         </div>
       </div>
-      <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -205,6 +205,24 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Welcome</h4>
+      </div>
+      <div class="modal-body">
+        <p>This app is currently in beta. There will be bugs. I'm doing everything I can to work on this in my free time. The app currently supports saving, loading, updating, and deleting recipes. It's not a fully featured yet as I would like. If you have any suggestions or notices any bugs, please submit an issue ticket or make a pull request on <a href="https://github.com/tgrowden/ejuice-calc" target="_blank">Github</a></p>
+        <p><strong>Would you like to contine?</strong></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Yes, Please</button>
+        <a href="/logout"><button type="button" class="btn btn-danger">Nope--log me out</button></a>
       </div>
     </div>
   </div>
