@@ -3,7 +3,7 @@ var app      = express();
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
-global.STATUS = require('./status');
+global.STATUS = "production"; //set STATUS to 'production', 'dev', or 'dev-local'
 if (STATUS == "production"){
 	var port     = process.env.PORT || 8001;
 } else {
