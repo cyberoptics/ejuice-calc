@@ -80,10 +80,8 @@ div.well {
 
 #recipesDiv {
   justify-content: space-around;
-  padding-bottom: 10px;
   align-items: flex-start;
   background-color: #eceeef;
-  padding-top: 20px;
   border-radius: .25rem;
 }
 
@@ -97,6 +95,11 @@ div.well {
   padding-bottom: 10px;
   align-items: flex-start;
 }
+
+.jumbotron {
+  padding: 2rem 2rem;
+}
+
 body {
   padding-bottom: 5rem;
 }
