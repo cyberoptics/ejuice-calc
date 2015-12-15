@@ -2,7 +2,7 @@
 (function() {
   // shorthand for $(document).ready
   $(function() {
-    $('#welcomeModal').modal('show');
+    //$('#welcomeModal').modal('show');
     //probably a better way to do this
     $('input').parent("td").css("padding", "0px 0px");
     $('div.input-group').parent("td").css("padding", "0px 0px");
