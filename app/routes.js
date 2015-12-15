@@ -19,7 +19,12 @@ module.exports = function(app, passport, user, recipe) {
     res.render('calc.ejs', {
       user: req.user
     });
-    console.log("recipe = " + recipe);
+  });
+  //Guest ===============================
+  app.get('/guest', function(req, res) {
+    res.render('calc.ejs', {
+      user: req.user
+    });
   });
   // LOGOUT ==============================
   app.get('/logout', function(req, res) {

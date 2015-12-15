@@ -41,5 +41,9 @@
     }
     // shorthand for $(document).ready
     $(function() {
-      setInputs();
+      if (document.cookie.indexOf("Values") != -1) {
+        setInputs();        
+      } else {
+        $('#guestModal').modal('show');
+      }
     });

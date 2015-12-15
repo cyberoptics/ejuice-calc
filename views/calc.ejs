@@ -7,7 +7,7 @@
     <% include ./partials/header %>
 <div class="col-sm-6 pull-sm-right">
   <div style="display: flex; align-self: flex-end; justify-content: flex-end; height: 40px; align-items: center;">
-
+  <% if (user) { %>
     <% if (user.local.email) { %>
       <a href="/profile" title="Profile" class="nav-link"><%= user.local.email %></a>
     <% } else if (user.google.token) { %>
@@ -17,12 +17,16 @@
         Login
       </a>
     <% } %>
- <a style="" class="nav-link" href="/logout" title="Logout"><i class="fa fa-sign-out" style="align-self: center;"></i></a>
+    <a style="" class="nav-link" href="/logout" title="Logout"><i class="fa fa-sign-out" style="align-self: center;"></i></a>
+  <% } else { %>
+    <a style="" class="nav-link" href="/" title="Login"><i class="fa fa-user"></i></a>
+  <% } %>
   </div>
   </div>
 </nav>
-
+<% if (user) { %>
 <% include ./partials/recipes %>
+<% } %>
     <div class="container">
       <div class="row">
         <div id="targetsCont" class="table-responsive">
@@ -227,6 +231,24 @@
     </div>
   </div>
 </div>
+<div class="modal fade" id="guestModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Guest</h4>
+      </div>
+      <div class="modal-body">
+        <p>You are currently not logged in as a user. If you continue as a guest, you will be able to save one recipe, and it is saved as a cookie. If you would like to have unlimited recipes associated with your account, please <a href="/">LOGIN</a>.</p>
+        <p><strong>Would you like to contine?</strong></p>
+      </div>
+      <div class="modal-footer flex">
+        <a href="/"><button type="button" class="btn btn-danger">Create an Account</button></a>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
       <!-- /.container -->
       <!-- Bootstrap core JavaScript
       ================================================== -->
@@ -237,9 +259,13 @@
       </script>
       <!-- custom scripts -->
       <script src="js/scripts.js"></script>
-      <script src="js/api.js"></script>
+      <% if (user) { %>
+        <script src="js/api.js"></script>
+      <% } else { %>
+        <script src="js/cookies.js"></script>
+      <% } %>
       <script src="js/bootstrap/bootstrap.min.js"></script>
-      <% if (user._id){ %>
+      <% if (user){ %>
         <script>
           window.userId = "<%= user._id %>";
         </script>
