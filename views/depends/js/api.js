@@ -65,6 +65,7 @@
             $self.val(values[i]);
             i++;
           });
+          $('#recipeName').val(name);
           // create rows for filling in ingredients
           var numIngredient = $('#ingredients tbody tr').length;
           for (i = 3; i < flavors.length; i += 3) {
@@ -93,8 +94,8 @@
     });
     //Update Recipe (Put data)
     $('#updateRecipe').click(function() {
-      //TODO logic for setting $recipe_id
-      var $recipe_id = {};
+      var $name = $('#recipeName').val();
+      var $recipe_id = $('#recipeSelect option:selected').val();
       var $values = [];
       $('.values').each(function() {
         var $self = $(this);
@@ -107,8 +108,9 @@
       });
       $.ajax({
         type: 'PUT',
-        url: "/api/recipes/" + $recipe_id,
+        url: "/api/recipes/"+$recipe_id,
         data: {
+          name: $name,
           values: $values,
           flavors: $flavors
         }
