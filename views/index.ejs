@@ -1,28 +1,24 @@
 <!doctype html>
 <html>
-<head>
+  <head>
     <% include ./partials/head %>
-</head>
+  </head>
 <body>
-
     <% include ./partials/header %>
-</nav>
-<div class="container">
-
+  </nav>
+  <div class="container">
     <div class="jumbotron text-xs-center">
-        <h1><span class="fa fa-lock"></span> Ejuice Calculator</h1>
-
-        <p>Login or Register with:</p>
+      <h1><span class="fa fa-lock"></span> Ejuice Calculator</h1>
+      <p>Login or Register with:</p>
       <div class="col-xs-12 col-sm-6 btnDiv">
         <a href="/login" class="btn btn-primary"><span class="fa fa-user"></span> Local Login</a>
         <a href="/signup" class="btn btn-primary"><span class="fa fa-user"></span> Local Signup</a>
       </div>
       <div class="col-xs-12 col-sm-6 btnDiv" >
-  		<a href="/guest" class="btn btn-warning"><span class="fa fa-user"></span> Guest</a>
-  		<a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google+</a>
-       </div>
+        <a href="/guest" class="btn btn-warning"><span class="fa fa-user"></span> Guest</a>
+        <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google+</a>
+      </div>
     </div>
-
-</div>
+  </div>
 </body>
 </html>

@@ -42,7 +42,7 @@
     // shorthand for $(document).ready
     $(function() {
       if (document.cookie.indexOf("Values") != -1) {
-        setInputs();        
+        setInputs();
       } else {
         $('#guestModal').modal('show');
       }

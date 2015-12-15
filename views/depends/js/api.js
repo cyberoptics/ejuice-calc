@@ -86,7 +86,7 @@
           $self.val(0);
         });
         $("#ingredients tbody").find("tr:gt(0)").remove();
-        $.each($('.flavors'), function(){
+        $.each($('.flavors'), function() {
           var $self = $(this);
           $self.val("");
         });
@@ -112,14 +112,14 @@
       //alert("$values and $flavors = " + $values + ", " + $flavors);
       $.ajax({
         type: 'PUT',
-        url: "/api/recipes/"+recipeId,
+        url: "/api/recipes/" + recipeId,
         data: {
           name: $name,
           values: $values,
           flavors: $flavors
         },
         success: function(response) {
-            $('#recipeUpdatedModal').modal('show');
+          $('#recipeUpdatedModal').modal('show');
         }
       });
     });
