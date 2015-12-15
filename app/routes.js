@@ -102,22 +102,7 @@ module.exports = function(app, passport, user, recipe) {
       res.redirect('/profile');
     });
   });
-  //
-  // test to serve page from mongodb
-  //
-  var user = mongoose.model('User');
-  app.get("/users", function(req, res) {
-    user.find({}, function(err, users) {
-      var userMap = {};
-      users.forEach(function(user) {
-        userMap[user._id] = [user._id, user.local.email, user.google.email];
-      });
-      res.send(userMap);
-    });
-  });
-  //    
-  // end test
-  //
+
   //=========API Setup=======================
   var router = express.Router();
   // middleware to use for all requests
@@ -177,8 +162,7 @@ module.exports = function(app, passport, user, recipe) {
       });
     });
   });
-  //app.use('/api', isLoggedIn, router);
-  app.use('/api', router);
+  app.use('/api', isLoggedIn, router);
 };
 // route middleware to ensure user is logged in
 function isLoggedIn(req, res, next) {

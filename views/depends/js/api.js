@@ -90,29 +90,36 @@
           var $self = $(this);
           $self.val("");
         });
+        $('#recipeName').val("");
       }
     });
     //Update Recipe (Put data)
     $('#updateRecipe').click(function() {
       var $name = $('#recipeName').val();
-      var $recipe_id = $('#recipeSelect option:selected').val();
+      var recipeId = $('#recipeSelect option:selected').val();
       var $values = [];
-      $('.values').each(function() {
+      $.each($('.values'), function() {
         var $self = $(this);
-        $values.push($self.val());
+        var data = $self.val();
+        $values.push(data);
       });
       var $flavors = [];
-      $('.flavors').each(function() {
+      $.each($('.flavors'), function() {
         var $self = $(this);
-        $flavors.push($self.val());
+        var data = $self.val();
+        $flavors.push(data);
       });
+      //alert("$values and $flavors = " + $values + ", " + $flavors);
       $.ajax({
         type: 'PUT',
-        url: "/api/recipes/"+$recipe_id,
+        url: "/api/recipes/"+recipeId,
         data: {
           name: $name,
           values: $values,
           flavors: $flavors
+        },
+        success: function(response) {
+            $('#recipeUpdatedModal').modal('show');
         }
       });
     });
