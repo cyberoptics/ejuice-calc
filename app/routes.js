@@ -17,7 +17,8 @@ module.exports = function(app, passport, user, recipe) {
   });
   app.get('/calculator', isLoggedIn, function(req, res) {
     res.render('calc.ejs', {
-      user: req.user
+      user: req.user,
+      //recipe: req.recipe
     });
   });
   //Guest ===============================
